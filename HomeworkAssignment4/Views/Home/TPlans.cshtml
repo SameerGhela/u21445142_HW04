@@ -1,0 +1,73 @@
+﻿@model List<HomeworkAssignment4.Models.Plan>
+@{
+    ViewBag.Title = "TPlans";
+}
+
+<h2>TypesofPlans</h2>
+
+@{ 
+    var efac = "";
+    var efac2 = "";
+    var efac3 = "";
+    var efac4 = "";
+    var efac5 = "";
+    var efac6 = "";
+}
+
+
+  <body>
+
+      
+      @foreach (var steps in Model)
+      {
+          efac = steps.EFact1();
+          efac2 = steps.EFact2();
+          efac3 = steps.EFact3();
+          efac4 = steps.EFact4();
+          efac5 = steps.EFact5();
+          efac6 = steps.EFact6();
+      }
+      <main class="container">
+    <section class="card">
+          <div>
+
+              <ul>
+
+                  @if (efac != "")
+                  {
+                      <li> @efac</li>
+                  }
+                  @if (efac2 != "")
+                  {
+                      <li> @efac2</li>
+                  }
+                  @if (efac3 != "")
+                  {
+                      <li> @efac3</li>
+                  }
+                  @if (efac4 != "")
+                  {
+                      <li> @efac4</li>
+                  }
+                  @if (efac5 != "")
+                  {
+                      <li> @efac5</li>
+                  }
+                  @if (efac6 != "")
+                  {
+                      <li> @efac6</li>
+                  }
+
+              </ul>
+
+          </div>
+        </section>
+
+      </main>
+    
+
+     
+
+  </body>
+
+   

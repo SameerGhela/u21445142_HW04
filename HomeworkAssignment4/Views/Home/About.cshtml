@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<style type="text/css">
+
+    h2 {
+        color: forestgreen;
+        font-family: Futura;
+        font-size:xx-large;
+    }
+    body {   
+        color: white;
+        font-family:Futura;
+        font-size: x-large;
+    }
+    
+    #background-video {
+        height: 100vh;
+        width: 100vw;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+</style>
+
+<h2> About Us </h2>
+<hr />
+<body>
+<p> Team Trees, stylized as #TEAMTREES, is a collaborative fundraiser that raised 20 million U.S. dollars before the start of 2020 to plant 20 million trees. 
+    The initiative was started by American YouTubers MrBeast and Mark Rober, and was mostly supported by YouTubers.</p>
+
+<p> Our goal is to plant as many trees as possible to help our planet and make the planet a better environment for everyone to live in.</p>
+
+</body>
+
+<video id="background-video" muted loop autoplay>
+    <source src="~/Video/about.mp4" type="video/mp4" />
+</video>

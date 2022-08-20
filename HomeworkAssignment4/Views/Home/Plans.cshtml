@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "Plans";
+}
+
+<style type="text/css">
+
+    h3 {
+        color: forestgreen;
+        font-family: Futura;
+        font-size: xx-large;
+    }
+
+    body {
+        
+        color: white;
+        font-family: Futura;
+        font-size: x-large;
+    }
+    #backround-video {
+        height: 100vh;
+        width: 100vw;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+</style>
+<h3><b>First lets find out how you can be more enivronmentally friendly</b></h3>
+
+<body>
+    <div class="row">
+        <div class="col-sm-4">
+            <ul>
+                <li> Step 1: Turn it off</li>
+                <li> Step 2: Invest in eco-friendly technology</li>
+                <li> Step 3: Switch to renewables</li>
+                <li> Step 4: Eat less meat </li>
+                <li> Step 5: Don’t waste food </li>
+                <li> Step 6: Compost</li>
+                <li> Step 7: Recycle everything</li>
+                <li> Step 8: Try to cut out plastic</li>
+                <li> Step 9: Use LED light bulbs</li>
+                <li> Step 10: Insulate your home</li>
+            </ul>
+        </div>
+        <div class="col-sm-4">
+            <ul>
+                <li> Step 11: Have your food shop delivered</li>
+                <li> Step 12: Fix it, don’t throw it</li>
+                <li> Step 13: Use eco-friendly cleaning products</li>
+                <li> Step 14: Don’t drive</li>
+                <li> Step 15: Use your microwave</li>
+                <li> Step 16: Buy local</li>
+                <li> Step 17: Don’t fly</li>
+                <li> Step 18: Grow your own</li>
+                <li> Step 19: Plant some trees</li>
+                <li> Step 20: Choose your personal care wisely</li>
+            </ul>
+        </div>
+    </div>
+    @{ var result = "";
+        if (IsPost)
+        {
+            var field1 = "Step 1: Turn it off";
+            var field2 = "Step 2: Invest in eco-friendly technology";
+            var field3 = "Step 3: Switch to renewables";
+            var field4 = "Step 4: Eat less meat";
+            var field5 = "Step 5: Don’t waste food";
+            var field6 = "Step 6: Compost";
+            var field7 = "Step 7: Recycle everything";
+            var field8 = "Step 8: Try to cut out plastic";
+            var field9 = "Step 9: Use LED light bulbs";
+            var field10 = "Step 10: Insulate your home";
+            var field11 = "Step 11: Have your food shop delivered";
+            var field12 = "Step 12: Fix it, don’t throw it";
+            var field13 = "Step 13: Use eco-friendly cleaning products";
+            var field14 = "Step 14: Don’t drive";
+            var field15 = "Step 15: Use your microwave";
+            var field16 = "Step 16: Buy local";
+            var field17 = "Step 17: Don’t fly";
+            var field18 = "Step 18: Grow your own";
+            var field19 = "Step 19: Plant some trees";
+            var field20 = "Step 20: Choose your personal care wisely";
+
+            var tempData = field1 + Environment.NewLine + field2 + Environment.NewLine + field3 + Environment.NewLine + field4 + Environment.NewLine + field5 + Environment.NewLine + field6 + Environment.NewLine
+                + field7 + Environment.NewLine + field8 + Environment.NewLine + field9 + Environment.NewLine + field10 + Environment.NewLine + field11 + Environment.NewLine + field12 + Environment.NewLine
+            + field13 + Environment.NewLine + field14 + Environment.NewLine + field15 + Environment.NewLine + field16 + Environment.NewLine + field17 + Environment.NewLine + field18 + Environment.NewLine +
+                field19 + Environment.NewLine + field20;
+
+            var dataFile = Server.MapPath("~/App_Data/data.txt");
+            File.AppendAllText(@dataFile, tempData);
+            result = "Information saved.";
+        }
+    }
+    <div class="well-sm">
+        <form id="form1" method="post">
+            <div>
+                <table>
+                    <tr>
+                        <td><p>&nbsp;Save These Steps Now!&nbsp;</p></td>
+                        <td><p><button style="color:black" id="FieldOne" name="FieldOne">Save here</button></p></td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+
+    <p>
+        Lets continue to our plans that suit you:  <input style="color:black" type="button" value="Continue" id="myButton" onclick="redirectOnClick()" />
+        <script>
+            function redirectOnClick() {
+                document.location = 'TPlans/TPlans';
+            }
+        </script>
+    </p>
+
+</body>
+
+<video id="backround-video" muted loop autoplay>
+    <source src="~/Video/Plans.mp4" type="video/mp4" />
+</video>

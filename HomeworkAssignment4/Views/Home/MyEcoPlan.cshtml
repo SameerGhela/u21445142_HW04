@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "MyEcoPlan";
+}
+
+<style type="text/css">
+    h2 {
+        color: forestgreen;
+        font-family: Futura;
+        font-size: xx-large;
+    }
+    #background-video {
+        height: 100vh;
+        width: 100vw;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+    h3 {
+        color: white;
+    }
+    body {
+        color:white;
+    }
+</style>
+
+<h2>MyEcoPlan</h2>
+
+<hr />
+
+<h3><b> Want to build an Eco Plan? </b></h3>
+
+<body>
+
+    <p>
+        View our plans for you here :   <input style="color:black" type="button" value="EcoPlans" id="myButton" onclick="redirectOnClick()" />
+        <script>
+            function redirectOnClick() {
+                document.location = 'Plans/Plans';
+            }
+        </script>
+    </p>
+
+</body>
+
+<video id="background-video" muted loop autoplay>
+    <source src="~/Video/EcoPlan.mp4" type="video/mp4" />
+</video>

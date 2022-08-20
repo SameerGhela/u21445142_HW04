@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+<style type="text/css">
+
+    h2 {
+        color: forestgreen;
+        font-family: Futura;
+        font-size: xx-large;
+    }
+
+    body {
+        color: white;
+        font-family: Futura;
+        font-size: x-large;
+    }
+    #background-video {
+        height: 100vh;
+        width: 100vw;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+</style>
+<h2>Contact Us</h2>
+
+<hr />
+<body>
+
+    <p> <b>How to contact us? </b><br /> We are based in Greenville, North Carolina, U.S <br /> Phone number: 012 345 967 <br /> Email: teamtrees@gmail.com </p>
+
+</body>
+
+<video id="background-video" muted loop autoplay>
+    <source src="~/Video/contact.mp4" type="video/mp4" />
+</video>
